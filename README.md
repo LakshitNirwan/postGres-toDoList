@@ -1,45 +1,26 @@
-<%- include('partials/header.ejs'); -%>
+# PostgreSQL To-Do List 📝
 
-  <div class="box" id="heading">
-    <h1>
-      <%= listTitle %>
-    </h1>
-  </div>
-  <div class="box">
-    <% for(let item of listItems){%>
-      <div class="item">
-        <form action="/delete" method="post">
-          <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item.id %>">
-        </form>
+A full-stack To-Do List web application that lets users add, view, and delete tasks, using **PostgreSQL** as the backend database.
 
-        <p id="title<%=item.id%>">
-          <%= item.title %>
-        </p>
+## 🚀 Features
 
-        <form class="edit" action="/edit" method="post">
-          <input type="hidden" name="updatedItemId" value="<%= item.id %>">
-          <input id="input<%=item.id%>" type="text" name="updatedItemTitle" value="<%= item.title %>" autocomplete="off"
-            autofocus="true" hidden="true" />
-          <button id="done<%=item.id%>" class="edit" type="submit" hidden><img class="icon"
-              src="/assets/icons/check-solid.svg" alt="tick image"></button>
-        </form>
-        <button id="edit<%=item.id%>" class="edit" onclick="handler('<%=item.id%>')"><img class="icon"
-            src="/assets/icons/pencil-solid.svg" alt="pencil image"></button>
-      </div>
-      <% } %>
+- Add new tasks
+- View a list of saved tasks
+- Delete tasks
+- Persistent storage using PostgreSQL
+- Server-side API to manage tasks
 
-        <form class="item" action="/add" method="post">
-          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true" />
-          <button class="add" type="submit" name="list" value=<%=listTitle %> >+</button>
-        </form>
-  </div>
+## 🛠️ Tech Stack
 
-  <script>
-    function handler(id) {
-      document.getElementById("title" + id).setAttribute("hidden", true)
-      document.getElementById("edit" + id).setAttribute("hidden", true)
-      document.getElementById("done" + id).removeAttribute("hidden")
-      document.getElementById("input" + id).removeAttribute("hidden")
-    }
-  </script>
-  <%- include('partials/footer.ejs'); -%>
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Node.js, Express.js  
+- Database: PostgreSQL  
+- REST API for task management
+
+## 📌 What I Learned
+
+- Setting up and connecting to a PostgreSQL database  
+- Building REST APIs using Node.js and Express  
+- Handling HTTP requests (GET, POST, DELETE)  
+- CRUD operations with a relational database  
+- Structuring a full-stack project
