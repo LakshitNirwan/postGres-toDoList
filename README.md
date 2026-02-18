@@ -17,6 +17,26 @@ A full-stack To-Do List web application that lets users add, view, and delete ta
 - Database: PostgreSQL  
 - REST API for task management
 
+1️⃣ Clone the repository
+bash
+git clone https://github.com/LakshitNirwan/postGres-toDoList.git
+cd postGres-toDoList
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Setup PostgreSQL
+
+Make sure PostgreSQL is installed and running on your system.
+Create a database (example):
+    CREATE DATABASE todolist;
+
+4️⃣ Run the project
+nodemon index.js
+
+5️⃣ Open in browser
+http://localhost:3000
+
 ## 📌 What I Learned
 
 - Setting up and connecting to a PostgreSQL database  
